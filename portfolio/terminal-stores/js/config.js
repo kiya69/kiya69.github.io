@@ -1,5 +1,5 @@
 var config = {
-  baseUrl: window.location.pathname,
+  baseUrl: window.location.pathname.substring(0, str.length - 1),
   backgroundColor: 'rgb(200, 200, 200)',
   zoomDistance: {
     init: 150,

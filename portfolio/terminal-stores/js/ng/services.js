@@ -100,7 +100,7 @@ app.factory('three', function($http, $log, $rootScope) {
   //   });
   // }
   function loadCards(data) {
-    var loader = new THREE.UTF8Loader();
+    var loader = new THREE.OBJLoader();
     config.cards.info = data;
     var cards = window.location.hash.substring(1).split(';');
 
