@@ -1,5 +1,5 @@
 var config = {
-  baseUrl: 'portfolio/terminal-stores',
+  baseUrl: '',
   backgroundColor: 'rgb(200, 200, 200)',
   zoomDistance: {
     init: 150,
