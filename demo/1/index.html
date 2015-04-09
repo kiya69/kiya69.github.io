@@ -1,0 +1,162 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald:300">
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
+    <script src='wirewax.js'></script>
+    <style type="text/css">
+    body {
+      font-family: 'Oswald','Open Sans';
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    #wrap {
+      margin:0 auto;
+      width: 1024px;
+      height: 576px;
+      margin-top: 1%;
+    }
+    #left_col {
+      float:left;
+      width:50%;
+      height: 100%;
+      margin-left: -100%;
+      background: -moz-linear-gradient(-30deg,  rgba(182,156,202,0.4) 0%, rgba(59,27,5,0.4) 33%, rgba(59,27,5,0.4) 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(182,156,202,0.4)), color-stop(28%,rgba(59,27,5,0.4)), color-stop(100%,rgba(59,27,5,0.4))); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(-30deg,  rgba(182,156,202,0.4) 0%,rgba(59,27,5,0.4) 33%,rgba(59,27,5,0.4) 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(-30deg,  rgba(182,156,202,0.4) 0%,rgba(59,27,5,0.4) 33%,rgba(59,27,5,0.4) 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(-60deg,  rgba(182,156,202,0.4) 0%,rgba(59,27,5,0.4) 33%,rgba(59,27,5,0.4) 100%); /* IE10+ */
+      background: linear-gradient(110deg,  rgba(182,156,202,0.4) 0%,rgba(59,27,5,0.4) 33%,rgba(59,27,5,0.4) 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66b69cca', endColorstr='#663b1b05',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    }
+    #right_col {
+      float:right;
+      width:50%;
+      height: 100%;
+      text-align: center;
+      margin-right: -100%;
+    }
+    #right_col p{
+      /*padding: 90%*/
+        width: 378px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .buy {
+      cursor: pointer;
+      border-style: solid;
+      border-width: 1px;
+      width: 240px;
+      height: 1.75em;
+      padding: 5px;
+      text-align: center;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    .buy:hover{
+      background-color: #000;
+      color: #fff;
+    }
+    logo{
+      position: absolute;
+      width: 146px;
+      height:50px;
+      background-image:  url("toast-logo.png");
+      margin-left: -500px;
+      margin-top: 73px;
+      -ms-transform: rotate(-90deg); /* IE 9 */
+      -webkit-transform: rotate(-90deg); /* Safari */
+      transform: rotate(-90deg);
+    }
+    #product-image {
+      width: 50%;
+      height: 50%;
+      background-image:  url("http://edge-assets.wirewax.com/creativeData/toasttest/product_2.jpg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      /*right: -50px;*/
+      margin-right: auto;
+      margin-left: auto;
+    }
+    #close {
+      /*position: absolute;*/
+      right: 5%;
+      top:20px;
+      cursor: pointer;
+      margin-right: -50%;
+      font-size: 11px;
+    }
+    #close:hover{
+      color: #666666;
+    }
+    #share{
+      display: inline-block;
+      font-size: 12px;
+      margin-top: 25px;
+      line-height:110%;
+    }
+    #fb {
+      width: 1.2em;
+      height: 1.2em;
+      background-size: contain;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      background-image:  url("http://edge­-assets.wirewax.com/creativeData/toasttest/fb.png");
+      display: inline-block;
+      margin-bottom: -2px;
+    }
+    #fb:hover{
+      background-image:  url("http://edge­-assets.wirewax.com/creativeData/toasttest/fb_hover.png");
+    }
+    #twitter{ 
+      width: 1.2em;
+      height: 1.2em;
+      background-size: contain;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      background-image:  url("http://edge­-assets.wirewax.com/creativeData/toasttest/tweet.png");
+      display: inline-block;
+      margin-bottom: -2px;
+
+    }
+    #twitter:hover{
+
+      background-image:  url("http://edge­-assets.wirewax.com/creativeData/toasttest/tweet_hover.png");
+    }
+    .hidden {
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s 0.8s, opacity 0.8s linear;
+    }
+    #title{
+      font-size: 26px;
+      line-height: 50%;
+    }
+    #price{
+      font-size: 18px;  
+      line-height: 0%;
+      margin-bottom: 5%;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+        <div id="left_col">
+          <logo></logo>
+        </div>
+        <div id="right_col">
+          <div id="close">CLOSE</div>
+          <div id="product-image"></div>
+          <p id="title">OVERSIZED COTTON RAINCOAT</p>
+          <p id="price">£145</p>
+          <p>Oversized, double-breaseted, soft cotton twill raincoat with detachable hood, dropped shoulders and wide</p>
+          <div class="buy">BUY NOW</div>
+          <div id="share">
+            SHARE&nbsp;&nbsp;
+            <div id="fb"></div>
+            <div id="twitter"></div>
+        </div>
+    </div>
+  </body>
+</html>
