@@ -10,7 +10,7 @@ $(document).ready(function() {
       "margin-right": '+=100%'
     });
     setTimeout(function() {
-      $('logo').animate({
+      $('#logo').animate({
         "margin-left": '+=480'
       });
     }, 300)
