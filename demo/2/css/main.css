@@ -1,197 +1,112 @@
-/*! HTML5 Boilerplate v5.1.0 | MIT License | https://html5boilerplate.com/ */
-
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
 @import url('http://fonts.googleapis.com/css?family=Nunito');
 html {
-    color: #222;
+    color: #000;
     font-size: 1em;
-    line-height: 1.4;
     font-family: 'Nunito'
 }
-.overlay {
-  position: absolute; 
-  top: 100px; 
-  left:500px;
-  width: 514px;
-  height: 210px;
-  z-index: 998;
-  animation-delay: 0.5s;
-  /*background-image: url('../img/button.png');*/
-  /*for alignment*/
-  background-repeat: no-repeat;
-    -webkit--animation-duration: 1s;
+
+.button {
+    position: absolute;
+    top: 90px;
+    left: 600px;
+    width: 514px;
+    height: 210px;
+    z-index: 998;
+    cursor: pointer;
+    /*-webkit--animation-duration: .8s;*/
+    /*background-image: url('../img/button.png');
+    background-repeat: no-repeat;
+    z-index: 2000;*/
+    /*for debugging alignments with other elements*/
 }
 
 #v {
-  z-index: 1;
+    z-index: 1;
 }
-.circle {
-  position: absolute;
+
+.btn-circle {
+    position: absolute;
     background-image: url('../img/circle.png');
     z-index: 1000;
-    width: 100%;
-    height: 100%;
+    width: 198px;
+    height: 198px;
     background-repeat: no-repeat;
     -webkit--animation-duration: 1s;
+    left:47px;
 }
-.cat {
-  position: absolute;
+
+.btn-cat {
+    position: absolute;
     background-image: url('../img/cat.png');
     z-index: 1001;
-    width: 100%;
-    height: 100%;
+    width: 199px ;
+    height: 140px;
     background-repeat: no-repeat;
     animation-delay: 0.1s;
-    -webkit-animation-delay:0.1s;
+    -webkit-animation-delay: 0.1s;
+    top:35px;
 }
-.dialog {
+
+.btn-dialog-wrap {
     position: absolute;
     overflow: hidden;
     z-index: 999;
     width: 70%;
     height: 100%;
     background-repeat: no-repeat;
-
     right: 0px;
-    /*padding-left:-100px;
-    right:0px;*/
 }
-.dialog-img {
-  position: absolute;
-    background-image: url('../img/dialog_orig.png');
+
+.btn-dialog-img {
+    position: absolute;
+    background-image: url('../img/dialog.png');
     z-index: 999;
     width: 514px;
     height: 100%;
     background-repeat: no-repeat;
-    animation-delay: 0.6s;
-    -webkit-animation-delay:0.2s;
-      left: -154px;
+    animation-delay: 0.1s;
+    -webkit-animation-delay: 0.1s;
+    animation-duration: .8s;
+    left: -154px;
 }
+
 .text {
-  vertical-align: middle;
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  font-size: 3em;
-  z-index: 1010;
-  line-height: 200px;
-  text-indent: 220px;
-  color: red;
-  letter-spacing: -3px;
+    vertical-align: middle;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    font-size: 3em;
+    z-index: 1010;
+    line-height: 200px;
+    text-indent: 220px;
+    letter-spacing: -3px;
 }
-.arrowWrap {
+
+.btn-arrow-wrap {
     position: absolute;
     z-index: 1002;
     width: 514px;
-  height: 210px; 
+    height: 210px;
 }
-.arrow {
 
-  position: absolute;
+.btn-arrow {
+    position: absolute;
     background-image: url('../img/up_arrow.png');
     z-index: 1003;
-    width: 100%;
-    height: 100%;
+    width: 79px;
+    height: 67px;
     background-repeat: no-repeat;
-    animation-delay: 0.2s;
-    -webkit-animation-delay:0.2s;
-    /*-webkit-animation-fill-mode: forwards;*/
-    -webkit-animation:normal forwards;
+    animation-delay: 0.25s;
+    -webkit-animation-delay: 0.25s;
     left: 369px;
     top: 143px;
-
 }
+
 .hidden {
     visibility: hidden;
 }
-.overlay:hover .arrowHover {
-    -webkit-animation:wobbleBottomRight .55s;
+
+.button:hover .arrowHover {
+    -webkit-animation: wobbleBottomRight .5s;
     -webkit-animation-iteration-count: infinite;
-    /*visibility: hidden;*/
-
 }
-.slideInTopLeftZoomIn {
-  -webkit-animation-name: slideInTopLeftZoomIn;
-  animation-name: slideInTopLeftZoomIn;
-}
-
-@-webkit-keyframes slideInTopLeftZoomIn {
-  0% {
-    -webkit-transform: translate3d(50%, 50%, 0);
-    transform: translate3d(50%, 50%, 0);
-    opacity: 0;
-    -webkit-transform: scale3d(.3, .3, .3);
-    transform: scale3d(.3, .3, .3);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideInTopLeftZoomIn {
-  0% {
-    -webkit-transform: translate3d(50%, 50%, 0);
-    transform: translate3d(50%, 50%, 0);
-    opacity: 0;
-    -webkit-transform: scale3d(.3, .3, .3);
-    transform: scale3d(.3, .3, .3);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-/*@-webkit-keyframes zoomInTopLeft {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(.1, .1, .1) translate3d(50%, 50%, 0);
-    transform: scale3d(.1, .1, .1) translate3d(50%, 50%, 0);
-  }
-
-  60% {
-    opacity: 1;
-    -webkit-transform: scale3d(.475, .475, .475) translate3d(0, 0, 0);
-    transform: scale3d(.475, .475, .475) translate3d(0, 0, 0);
-  }
-}
-
-@keyframes zoomInTopLeft {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(.1, .1, .1) translate3d(50%, 50%, 0);
-    transform: scale3d(.1, .1, .1) translate3d(50%, 50%, 0);
-  }
-
-  60% {
-    opacity: 1;
-    -webkit-transform: scale3d(.475, .475, .475) translate3d(0, 0, 0);
-    transform: scale3d(.475, .475, .475) translate3d(0, 0, 0);
-  }
-}
-
-.zoomInTopLeft {
-  -webkit-animation-name: zoomInTopLeft;
-  animation-name: zoomInTopLeft;
-}*/
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
- */

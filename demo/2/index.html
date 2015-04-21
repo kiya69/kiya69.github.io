@@ -1,43 +1,33 @@
 <!doctype html>
-<html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <style type="text/css">
+    </style>
+</head>
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/animate.css">
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-        <style type="text/css">
-              
-        </style>
-    </head>
-    <body>
-
-        <video id="v" src="reference.mov" controls autoplay></video>
-
-  <div class="overlay">
-    <div id="circle" class="circle animated zoomIn "></div>
-    <div id="cat" class="cat animated zoomIn "></div>
-
-    <div class="arrowWrap">
-        <div id="arrow" class="arrow animated zoomInTopLeft"></div>
+<body>
+    <video id="v" src="reference.mov" controls autoplay></video>
+    <div class="button">
+        <div  class="btn-circle animated zoomIn"></div>
+        <div class="btn-cat animated zoomIn"></div>
+        <div class="btn-arrow-wrap">
+            <div class="btn-arrow animated zoomInTopLeft arrowHover"></div>
+        </div>
+        <div class="btn-dialog-wrap ">
+            <div class="btn-dialog-img animated slideInLeft ">
+                <div class="text">Cat Lover</div>
+            </div>
+        </div>
     </div>
-    
-    <div class="dialog ">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
 
-        <div class="dialog-img animated slideInLeft"><div class="text">Cat Lover</div></div>
-    </div>
-  </div>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-        <script src="js/main.js"></script>
-
-    </body>
 </html>

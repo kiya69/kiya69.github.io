@@ -9,7 +9,7 @@ Copyright (c) 2015 Daniel Eden
 
 .animated {
   -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  animation-duration: .8s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
@@ -3198,47 +3198,6 @@ Copyright (c) 2015 Daniel Eden
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp;
 }
-/*@-webkit-keyframes zoomInTopLeft {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(.1, .1, .1) translate3d(-150px, -150px, 0);
-    transform: scale3d(.1, .1, .1) translate3d(50%, 50%, 0);
-  }
-
-  /*60% {
-    opacity: 1;
-    -webkit-transform: scale3d(.475, .475, .475) translate3d(0, 0, 0);
-    transform: scale3d(.475, .475, .475) translate3d(0, 0, 0);
-  }*/
-/*  100% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes zoomInTopLeft {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(.1, .1, .1) translate3d(150px, 150px, 0);
-    transform: scale3d(.1, .1, .1) translate3d(50%, 50%, 0);
-  }*/
-
-/*  60% {
-    opacity: 1;
-    -webkit-transform: scale3d(.475, .475, .475) translate3d(0, 0, 0);
-    transform: scale3d(.475, .475, .475) translate3d(0, 0, 0);
-  }*/
-
-/*  100% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.zoomInTopLeft {
-  -webkit-animation-name: zoomInTopLeft;
-  animation-name: zoomInTopLeft;
-}*/
 @-webkit-keyframes zoomInTopLeft {
   0% {
     -webkit-transform: scale3d(.1, .1, .1) translate3d(100px, 100px, 0);
@@ -3275,31 +3234,23 @@ Copyright (c) 2015 Daniel Eden
   animation-name: zoomInTopLeft;
 }
 @-webkit-keyframes zoomOutBottomRight {
-  0% {
-    /*-webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);*/
-  }
   50%{
     visibility: hidden;
   }
   100% {
-    -webkit-transform: scale3d(.1, .1, .1); /*translate(10%, 10%, 0)*/
-    transform: scale3d(.1, .1, .1); /*translate3d(10%, 10%, 0)*/
+    -webkit-transform: scale3d(.1, .1, .5); /*translate(10%, 10%, 0)*/
+    transform: scale3d(.1, .1, .5); /*translate3d(10%, 10%, 0)*/
     visibility: hidden;
   }
 }
 
 @keyframes zoomOutBottomRight {
-0% {
-   /* -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);*/
-  }
   50%{
     visibility: hidden;
   }
   100% {
-    -webkit-transform: scale3d(.1, .1, .1); /*translate(10%, 10%, 0)*/ 
-    transform: scale3d(.1, .1, .1); /*translate3d(20%, 20%, 0)*/
+    -webkit-transform: scale3d(.1, .1, .5); /*translate(10%, 10%, 0)*/ 
+    transform: scale3d(.1, .1, .5); /*translate3d(20%, 20%, 0)*/
     visibility: hidden;
   }
 }
