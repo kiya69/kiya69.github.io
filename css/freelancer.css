@@ -11,6 +11,10 @@ body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,Myriad, Montserrat;
     font-weight: lighter;
 }
+body:after{
+    display:none;
+    content: url("../img/DSC_0465.jpg");
+}
 .blur {
     -webkit-filter: blur(5px);
     -moz-filter: blur(5px);
@@ -133,6 +137,7 @@ header .container {
     padding-top: 100px;
     padding-bottom: 50px;
     width: 100%;
+    background-color: #000;
     background-image: url('../img/DSC_0465.jpg');
     background-repeat: no-repeat;
     background-size: cover;
