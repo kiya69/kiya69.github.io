@@ -8,11 +8,8 @@ app.controller('controller', function($scope, three) {
   NProgress.configure({
     trickle: false
   });
-  Tabletop.init({
-    key: config.cards.key,
-    callback: loadCardsToScope,
-    simpleSheet: true
-  });
+  // Load card data directly from local JSON instead of Google Sheets/Tabletop
+  $.getJSON(config.baseUrl + config.cards.url + config.cards.json, loadCardsToScope);
   NProgress.start();
   var pct;
   radio('progress').subscribe(function(url, size) {
