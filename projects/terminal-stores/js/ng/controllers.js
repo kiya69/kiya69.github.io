@@ -12,11 +12,21 @@ app.controller('controller', function ($scope, three) {
   $.getJSON(config.baseUrl + config.cards.url + config.cards.json, loadCardsToScope);
   NProgress.start();
   var pct;
+  var loadingDoneTimer;
   radio('progress').subscribe(function (url, size) {
     config.progress.current += size;
     pct = config.progress.current / config.progress.total;
-    if (pct < 0.99) { NProgress.set(pct); NProgress.set(pct); console.log('pct', pct) }
-    else hideLoading();
+    // Update the visible progress bar, but don't jump to 100% yet
+    var displayPct = Math.min(pct, 0.99);
+    NProgress.set(displayPct);
+    // console.log('pct', pct);
+
+    // After progress has been quiet for a short time, finish the loader
+    clearTimeout(loadingDoneTimer);
+    loadingDoneTimer = setTimeout(function () {
+      NProgress.set(1.0);
+      hideLoading();
+    }, 500);
 
   });
 
