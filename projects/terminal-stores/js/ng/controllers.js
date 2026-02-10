@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('controller', function($scope, three) {
+app.controller('controller', function ($scope, three) {
   var params = {
     canvasId: 'main'
   };
@@ -12,31 +12,31 @@ app.controller('controller', function($scope, three) {
   $.getJSON(config.baseUrl + config.cards.url + config.cards.json, loadCardsToScope);
   NProgress.start();
   var pct;
-  radio('progress').subscribe(function(url, size) {
+  radio('progress').subscribe(function (url, size) {
     config.progress.current += size;
     pct = config.progress.current / config.progress.total;
-    if (pct < 1) NProgress.set(pct);
+    if (pct < 0.99) { NProgress.set(pct); NProgress.set(pct); console.log('pct', pct) }
     else hideLoading();
 
   });
 
-  radio('progress.total').subscribe(function(size) {
+  radio('progress.total').subscribe(function (size) {
     config.progress.total = size;
   });
 
   three.load(config.baseUrl + config.model.url);
-  $scope.onCardClick = function(card, fromText) {
+  $scope.onCardClick = function (card, fromText) {
     three.onCardClick(card);
     if (fromText) card.selected = !card.selected;
 
   };
   var mousePosition = {};
-  $scope.onCanvasMouseDown = function(event) {
+  $scope.onCanvasMouseDown = function (event) {
     mousePosition.x = event.offsetX;
     mousePosition.y = event.offsetY;
 
   };
-  $scope.onCanvasMouseUp = function(event) {
+  $scope.onCanvasMouseUp = function (event) {
     if (mousePosition.x != event.offsetX || mousePosition.y != event.offsetY) return;
     var cardName = three.onMouseUp();
     for (var i in $scope.groups) {
@@ -49,12 +49,12 @@ app.controller('controller', function($scope, three) {
   };
 
   $scope.sign = '+ ';
-  $scope.showSign = function(showCard) {
+  $scope.showSign = function (showCard) {
     if (showCard) return '- ';
     else return '+ ';
 
   };
-  $scope.clearSelections = function() {
+  $scope.clearSelections = function () {
     window.location.hash = '';
     for (var i in $scope.groups)
       for (var j in $scope.groups[i].cards)
@@ -67,7 +67,7 @@ app.controller('controller', function($scope, three) {
     if (loading && !loading.id) {
       NProgress.done();
       loading.id = 'loading-close';
-      setTimeout(function() {
+      setTimeout(function () {
         $('loading').remove();
       }, 700);
     }
@@ -80,7 +80,7 @@ app.controller('controller', function($scope, three) {
   }
 
   function loadGroups() {
-    three.loadGroups(config.baseUrl + config.groups.url + config.groups.json, function(groups) {
+    three.loadGroups(config.baseUrl + config.groups.url + config.groups.json, function (groups) {
       for (var group in groups) {
         groups[group].cards = [];
         for (var card in config.cards.data) {
@@ -89,7 +89,7 @@ app.controller('controller', function($scope, three) {
           }
         }
       }
-      $scope.$apply(function() {
+      $scope.$apply(function () {
         $scope.groups = groups;
       });
     });
